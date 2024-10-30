@@ -1,0 +1,232 @@
+/*
+DESENVOLVEDOR: VBDOL.DEV
+GITHUB: https://github.com/VBDOL
+LINKEDIN: https://www.linkedin.com/in/victor-b-o-leme-dev
+Alura: https://cursos.alura.com.br/user/vbdol-dev
+DIO: https://www.dio.me/users/vbdol_dev
+
+DATA: 26/10/2024
+*/
+body{
+    cursor:url("../assets/cursor/yugicursor.png"), default;
+}
+
+button, a, img:hover, button:hover,
+a:hover{
+    cursor:url("../assets/cursor/yamiyugicursorGLOW.png"), default;
+}
+
+.bg-video {
+    position: fixed; /* Altera para fixed para garantir que ocupe a tela inteira */
+    z-index: -2;
+    top: 0; /* Adiciona top e left para garantir que comece no canto superior esquerdo */
+    left: 0;
+    width: 100%; /* Altera para 100% para ocupar toda a largura da tela */
+    height: 100%; /* Altera para 100% para ocupar toda a altura da tela */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.bg-video .video {
+    min-width: 100%; /* Garante que o vídeo ocupe pelo menos 100% da largura */
+    min-height: 100%; /* Garante que o vídeo ocupe pelo menos 100% da altura */
+    object-fit: cover; /* Faz com que o vídeo cubra toda a área sem distorção */
+}
+
+.bg-video::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.container {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    height: 100vh;
+}
+
+.container__left {
+    width: 35%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container__right{
+    width: 65%;
+
+}
+
+.score_box {
+    background-color: #fff;
+    padding: 30px;
+}
+
+.frame {
+    border: 3px solid #000;
+    border-radius: 5px;
+}
+
+.card_details {
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 6rem;
+    width: 100%;
+}
+
+#card-name {
+    font-size: 0.8rem;
+}
+
+#card-type {
+    font-size: 1rem;
+}
+
+.card-box__container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.3rem;
+    
+}
+
+.card-versus__container{
+    
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding-top: 0.1rem;
+    height: 300px;
+    
+}
+
+.versus-top, .versus-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.versus-bottom{
+    margin-top: 1rem;
+}
+
+#next-duel{
+    display: none;
+}
+
+.card-box{
+    height: 9rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.card-infield{
+    height: 11.2rem;
+    width: 8rem;
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
+.card{
+    transition: transform 0.2s;
+}
+
+.card:hover{
+    transform: scale(1.2);
+}
+.redes a {
+    margin-top: 5rem;
+    margin: 0 10px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.redes a:hover {
+    transform: scale(1.2);
+    color: #ffdd00;
+}
+
+.custom-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.custom-icon:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+    /* Ajusta a altura dos containers */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
+    }
+
+    /* Ajusta o tamanho da área da esquerda */
+    .container__left {
+        width: 100%;
+        min-width: unset;
+        margin-bottom: 1rem;
+    }
+
+    /* Ajusta o tamanho da área da direita */
+    .container__right {
+        width: 100%;
+    }
+
+    /* Ajusta a área de pontuação */
+    .score_box {
+        padding: 15px;
+        font-size: 0.8rem;
+    }
+
+    /* Ajusta os detalhes das cartas */
+    .card_details {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    /* Ajusta o tamanho dos elementos na área central */
+    .card-infield {
+        height: 8rem;
+        width: 6rem;
+    }
+
+    /* Ajusta o botão para caber melhor */
+    #next-duel {
+        width: 80%;
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    /* Redimensiona a área das cartas e ajusta o layout */
+    .card-box {
+        height: 6rem;
+        flex-wrap: wrap;
+    }
+
+    /* Ajusta a área do vídeo de fundo */
+    .bg-video .video {
+        object-fit: contain; /* para evitar cortes em telas menores */
+    }
+}
